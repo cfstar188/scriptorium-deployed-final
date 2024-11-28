@@ -45,4 +45,9 @@ export const useAuth = (): AuthContextType => {
   return context;
 };
 
-export default AuthContext;
+// Add a default export component to make this file a valid page.
+const AuthContextPage: React.FC = () => {
+  return <div>AuthContext is working!</div>;
+};
+
+export default AuthContextPage;  // Default export a page component
