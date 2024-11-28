@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Theme Variables */
+:root {
+  --background: #ffffff; /* Light mode background */
+  --foreground: #171717; /* Light mode text */
+  --primary: #2563eb; /* Primary blue for accents */
+  --code-bg: #f5f5f5; /* Light mode code block background */
+  --code-text: #1e1e1e; /* Light mode code text */
+}
+
+.dark {
+  --background: #1a1a1a; /* Dark mode background */
+  --foreground: #e5e5e5; /* Dark mode text */
+  --primary: #60a5fa; /* Lighter blue in dark mode */
+  --code-bg: #272727; /* Dark mode code block background */
+  --code-text: #e0e0e0; /* Dark mode code text */
+}
+
+/* Global Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Code Block Styling */
+pre, code {
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Button Styling */
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Button Dynamic Hover Effects */
+button:hover {
+  background: linear-gradient(90deg, #1e40af, #22d3ee);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Specific Styles */
+.dark body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.dark pre, .dark code {
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+/* Navbar Styling */
+nav {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark nav {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.875rem;
+  }
+
+  pre, code {
+    font-size: 0.8rem;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .code-container {
+    @apply p-4 rounded bg-[var(--code-bg)] text-[var(--code-text)];
+  }
+}
+
+/* Animations */
+a, button {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+a:hover, button:hover {
+  transform: scale(1.1);
+}
+
+img:hover {
+  transform: scale(1.05) rotate(2deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.margin-left-200 {
+  margin-left: 40px;
+}
